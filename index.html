@@ -23,6 +23,12 @@ a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer} .wrap{m
 .footer{margin-top:60px;background:#173f36;color:#bacec4;padding:32px 0;font-size:12px}.footer a{text-decoration:underline;color:#e5f5eb}.footcols{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.smalllinks{display:flex;flex-wrap:wrap;gap:12px}
 @media(max-width:730px){.wrap{padding:0 16px}.hero{grid-template-columns:1fr 33%;gap:8px;padding:24px 0 38px}.hero h1{font-size:41px}.hero-photo{height:255px;border-radius:100px 100px 10px 10px}.lead{font-size:13px}.pill{font-size:10px}.section{padding:44px 0 8px}.day-head{grid-template-columns:1fr 34%}.day-head-txt{padding:15px}.day-head-txt h3{font-size:19px}.day-head img{height:200px}.step{grid-template-columns:80px 1fr;gap:8px 12px;padding:14px 0}.time{font-size:11px}.mapbtn{grid-column:2;justify-self:start;padding:5px 9px}.timeline{padding:8px 15px}.daytab{padding:8px 4px;font-size:11px}.daytab span{font-size:10px}.photo-grid{gap:7px}.photo{height:160px;border-radius:11px}.photo-overlay{left:9px;bottom:9px}.photo-overlay b{font-size:12px}.photo-overlay small{display:none}.two{grid-template-columns:1fr}.pack-grid{grid-template-columns:1fr}.panel{padding:17px}}
 @media print{.nav,.actions,.mapbtn{display:none}.daypanel{display:block!important;break-before:page}.mast{print-color-adjust:exact;-webkit-print-color-adjust:exact}.hero-photo{height:160px}.section{padding-top:25px}.step{padding:8px 0}.photo{height:130px}.pack-grid{grid-template-columns:repeat(2,1fr)}}
+</style><style id="journey-transport-style">
+.transport-heading{margin:20px 0 12px;font-weight:800;color:#1c5542;font-size:14px;letter-spacing:.2px}
+.transit-bridge{display:flex;flex-wrap:wrap;align-items:center;gap:7px;padding:10px 13px;margin:0 0 0 118px;border-left:2px dashed #b9d6c1;background:#f0f7ef;border-radius:5px 12px 12px 5px;font-size:12px;line-height:1.6;color:#305c4c}
+.transit-bridge .b-dist{font-weight:800;white-space:nowrap;color:#185745}
+.transit-bridge .b-way{color:#5c7666}
+@media(max-width:730px){.transit-bridge{margin-left:20px;padding:9px 12px;font-size:11.5px}}
 </style></head><body>
 <header class="mast"><div class="wrap"><div class="topline"><span class="logo">RAIN'S TRAVEL JOURNAL</span><span class="season">2026 · WINTER EDITION</span></div><div class="hero"><div><div class="eyebrow">MALAYSIA · 4 DAYS 3 NIGHTS</div><h1>圣诞<br><em>南洋漫游</em></h1><p class="lead">吉隆坡 × 马六甲<br>平安夜去海边，圣诞节看城市的灯。把每一天都留给风景、拍照和美食。</p><div class="pillbox"><span class="pill">12.23—12.27</span><span class="pill">两人同行</span><span class="pill">双威太子酒店</span><span class="pill">返程 27日 01:00</span></div></div><div class="hero-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Petronas%20Towers%20Night%20(cuadrado%20-%20square).jpg?width=1100" alt="吉隆坡双子塔夜景"></div></div></div></header>
 <nav class="nav"><div class="wrap navin"><a href="#days">每日时间表</a><a href="#photos">打卡图鉴</a><a href="#budget">费用预算</a><a href="#packing">出国清单</a><a href="#links">购票入口</a></div></nav>
@@ -52,4 +58,27 @@ function progress(){let checked=checkboxes.filter(x=>x.checked).map(x=>x.dataset
 checkboxes.forEach(x=>x.addEventListener('change',progress));progress();
 function clearChecklist(){checkboxes.forEach(x=>x.checked=false);progress()}
 async function sharePage(){try{if(navigator.share){await navigator.share({title:document.title,url:location.href})}else if(navigator.clipboard){await navigator.clipboard.writeText(location.href);alert('网页链接已复制')}else{prompt('复制网址',location.href)}}catch(e){}}
+</script><script id="trip-transport-extra">
+(function(){
+const legs=[["机场→酒店｜约55–60公里｜机场巴士+轻轨约1.5–2.5小时；Grab约60–100分钟","酒店→Sunway Putra Mall｜酒店连通｜步行约2–5分钟","商场→酒店房间｜同一建筑群｜步行约3–8分钟","酒店→独立广场｜约3–5公里｜LRT+步行约20–35分钟；Grab约15–30分钟","独立广场→中央艺术坊、鬼仔巷｜约0.6–1.1公里｜步行10–18分钟","鬼仔巷→茨厂街｜约0.3–0.6公里｜步行约5–10分钟"],["酒店→TBS车站｜约16–20公里｜LRT／MRT换乘约50–75分钟","TBS→Melaka Sentral｜道路约140–150公里｜长途巴士约2–3.5小时（节日可能更久）","车站→荷兰红屋｜约5–7公里｜Grab约15–30分钟","老城餐馆→圣保罗山｜约0.4–0.8公里｜步行10–15分钟","圣保罗山→马六甲海峡清真寺｜约4–6公里｜Grab约15–25分钟","海峡观景点内拍照｜附近步行｜游玩约30–40分钟","海峡→河畔与鸡场街｜约4–6公里｜Grab约15–30分钟","河畔→Melaka Sentral车站｜约5–7公里｜Grab约20–40分钟","Melaka Sentral→TBS｜约140–150公里｜大巴约2–3.5小时；TBS→酒店夜间可Grab"],["酒店→双子塔｜约4–6公里｜LRT＋换乘约25–40分钟／Grab约15–35分钟","双子塔→KLCC商场｜相邻｜步行2–5分钟","KLCC→布城｜道路约32–40公里｜MRT＋Grab约70–110分钟","布城清真寺周边游览｜景区内步行约0.5–1.5公里｜步行参观","布城→柏威年／武吉免登｜约30–40公里｜MRT＋Grab约70–120分钟","柏威年→金河广场｜约0.5–0.9公里｜步行约8–15分钟","核验车票→夜游巴士｜站内步行｜19:20前建议抵达候车点","观光巴士结束→酒店｜约4–6公里｜Grab约15–35分钟／公共交通按末班车"],["酒店→蒂蒂旺沙湖滨公园｜约2–4公里｜Grab约10–20分钟","湖滨公园→国家美术馆｜约0.8–1.5公里｜步行约12–22分钟","国家美术馆→酒店／商场｜约2–4公里｜Grab约10–20分钟","商场→酒店取行李｜酒店连通｜步行约3–8分钟","酒店→吉隆坡机场｜约55–60公里｜Grab约60–100分钟；机场巴士＋换乘约1.5–2.5小时"]];
+const titles=["12月23日｜抵达日交通","12月24日｜平安夜马六甲交通","12月25日｜圣诞节吉隆坡交通","12月26日｜返程日交通"];
+document.querySelectorAll('.daypanel').forEach((p,day)=>{
+ const line=p.querySelector('.timeline');
+ if(!line)return;
+ const heading=document.createElement('div'); heading.className='transport-heading';heading.textContent='📏 每站距离 · 交通方式（参考）';
+ line.parentNode.insertBefore(heading,line);
+ const rows=[...line.querySelectorAll('.step')];
+ const ds=legs[day]||[];
+ ds.forEach((s,i)=>{
+  if(!rows[i])return;
+  const m=s.match(/^([^｜]+)｜([^｜]+)｜(.+)$/);if(!m)return;
+  const div=document.createElement('div');div.className='transit-bridge';
+  const a=document.createElement('span');a.className='b-dist';a.textContent='↳ '+m[2];
+  const b=document.createElement('span');b.className='b-way';b.textContent=m[1]+'：'+m[3];
+  div.append(a,b);rows[i].after(div);
+ });
+});
+const pic=(label)=>{const esc=String(label||"吉隆坡旅行").replace(/[&<>"']/g,"");const svg='<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1100" viewBox="0 0 900 1100"><defs><linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#abd4bc"/><stop offset="1" stop-color="#d8c7aa"/></linearGradient></defs><rect width="900" height="1100" fill="url(#s)"/><circle cx="650" cy="240" r="90" fill="#fff2cb" opacity=".85"/><path d="M0 660 Q200 510 450 620 T900 610 L900 1100 L0 1100Z" fill="#4d8374"/><path d="M0 820 Q350 720 620 840 T900 790 L900 1100 L0 1100Z" fill="#255a52"/><rect x="260" y="340" width="116" height="410" fill="#dae1c9"/><rect x="526" y="340" width="116" height="410" fill="#dae1c9"/><path d="M318 170 L260 340H376Z M584 170 L526 340H642Z" fill="#e5e6d7"/><path d="M300 230 L375 230 M566 230 L641 230" stroke="#35665c" stroke-width="10"/><path d="M0 930 H900" stroke="#f8e4bf" stroke-width="5" opacity=".6"/><rect x="50" y="925" width="800" height="108" rx="14" fill="#173f37" opacity=".86"/><text x="450" y="995" font-size="46" font-family="sans-serif" text-anchor="middle" fill="white">'+esc.slice(0,20)+'</text></svg>';return 'data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg)}
+document.querySelectorAll('img').forEach(img=>{const handler=()=>{img.onerror=null;img.src=pic(img.alt)};img.addEventListener('error',handler);if(img.complete&&img.naturalWidth===0)handler();});
+})();
 </script></body></html>
