@@ -29,10 +29,36 @@ a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer} .wrap{m
 .transit-bridge .b-dist{font-weight:800;white-space:nowrap;color:#185745}
 .transit-bridge .b-way{color:#5c7666}
 @media(max-width:730px){.transit-bridge{margin-left:20px;padding:9px 12px;font-size:11.5px}}
+</style><style id="rain-edit-style">
+.editor-strip{position:sticky;top:52px;z-index:12;background:#f2f8f1;border-bottom:1px solid #cddfcf}
+.editor-main{max-width:1120px;margin:auto;padding:9px 18px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.editor-main button,.row-edit-actions button{border:1px solid #cbdccb;background:#fff;border-radius:10px;color:#255e45;font-weight:650;font-size:12px;padding:8px 11px;min-height:37px}
+.editor-main .main-edit{background:#1c5748;color:white;border-color:#1c5748}
+.editor-status{font-size:11px;color:#718574;white-space:nowrap}
+.rain-editing [data-trip-edit]{outline:1px dashed #5f9d82;outline-offset:2px;background:#f5fbf3;border-radius:4px;cursor:text;padding-left:3px;padding-right:3px}
+.rain-editing [data-trip-edit]:focus{outline:2px solid #2e7c59;background:white}
+.row-edit-actions{display:none;grid-column:2 / span 2;gap:5px;flex-wrap:wrap;margin-top:6px}
+.rain-editing .row-edit-actions{display:flex}
+.editor-disclaimer{font-size:12px;color:#5b745e;margin:4px 0 20px}
+.trip-edited-status{font-size:12px;display:none;color:#1b7051;font-weight:700}
+.rain-editing .trip-edited-status{display:inline}
+.trip-hidden{display:none!important}
+@media(max-width:730px){.editor-strip{top:48px}.editor-main{gap:6px;padding:8px 13px;overflow-x:auto;flex-wrap:nowrap}.editor-main button{flex-shrink:0;font-size:11px;padding:8px 10px}.editor-status{flex-shrink:0}.row-edit-actions{grid-column:2}}
+@media print{.editor-strip,.row-edit-actions,.editor-disclaimer,.trip-edited-status{display:none!important}}
 </style></head><body>
 <header class="mast"><div class="wrap"><div class="topline"><span class="logo">RAIN'S TRAVEL JOURNAL</span><span class="season">2026 · WINTER EDITION</span></div><div class="hero"><div><div class="eyebrow">MALAYSIA · 4 DAYS 3 NIGHTS</div><h1>圣诞<br><em>南洋漫游</em></h1><p class="lead">吉隆坡 × 马六甲<br>平安夜去海边，圣诞节看城市的灯。把每一天都留给风景、拍照和美食。</p><div class="pillbox"><span class="pill">12.23—12.27</span><span class="pill">两人同行</span><span class="pill">双威太子酒店</span><span class="pill">返程 27日 01:00</span></div></div><div class="hero-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Petronas%20Towers%20Night%20(cuadrado%20-%20square).jpg?width=1100" alt="吉隆坡双子塔夜景"></div></div></div></header>
 <nav class="nav"><div class="wrap navin"><a href="#days">每日时间表</a><a href="#photos">打卡图鉴</a><a href="#budget">费用预算</a><a href="#packing">出国清单</a><a href="#links">购票入口</a></div></nav>
-<div class="wrap"><div class="notice"><div>📌</div><div><b>平安夜重要提醒</b><br>12月24日是周四，马六甲鸡场街的固定夜市通常仅周五至周日18:00—24:00开放。行程保留鸡场街街区、古城商铺和晚餐，不将周末夜市写成确定开放；若有平安夜特别活动，以临近出发的官方公告为准。</div></div>
+<div class="editor-strip" id="rain-trip-editor"><div class="editor-main">
+<button type="button" class="main-edit" id="trip-edit-toggle">✏️ 开始编辑</button>
+<button type="button" id="trip-add-stop">＋新增行程</button>
+<button type="button" id="trip-save">💾 保存</button>
+<button type="button" id="trip-export">⬇ 导出备份</button>
+<button type="button" id="trip-import-btn">⬆ 导入备份</button>
+<button type="button" id="trip-download">📄 下载可编辑网页</button>
+<button type="button" id="trip-reset">恢复初始行程</button>
+<input id="trip-import-input" class="trip-hidden" type="file" accept=".json,application/json">
+<span class="editor-status" id="trip-editor-status">可直接在手机上修改 · 内容保存在当前浏览器</span>
+</div></div><div class="wrap"><div class="notice"><div>📌</div><div><b>平安夜重要提醒</b><br>12月24日是周四，马六甲鸡场街的固定夜市通常仅周五至周日18:00—24:00开放。行程保留鸡场街街区、古城商铺和晚餐，不将周末夜市写成确定开放；若有平安夜特别活动，以临近出发的官方公告为准。</div></div>
 <section id="days" class="section"><div class="kicker">01 / DAILY PLAN</div><h2>每一天，都安排得刚刚好</h2><p class="section-sub">点日期切换时间表；「地图」会打开对应地点的Google Maps。</p>
 <div class="daynav" id="daynav"><button type="button" class="daytab active" data-day="0">12月23日<span>周三 · 抵达</span></button><button type="button" class="daytab " data-day="1">12月24日<span>周四 · 平安夜</span></button><button type="button" class="daytab " data-day="2">12月25日<span>周五 · 圣诞节</span></button><button type="button" class="daytab " data-day="3">12月26日<span>周六 · 轻松收尾</span></button></div>
 <article class="daypanel active" data-panel="0"><div class="day-head"><div class="day-head-txt"><span class="kicker">DAY 01 / 12月23日</span><h3>慢慢开启吉隆坡</h3><p>上午09:00落地｜下午留足化妆、收拾和休息时间</p></div><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Petronas%20Towers%20Night%20(cuadrado%20-%20square).jpg?width=1100" alt="慢慢开启吉隆坡" loading="lazy"></div><div class="tip">酒店正常15:00入住；先寄存行李，不安排上午密集打卡。</div><div class="timeline"><div class="step"><div class="time">09:00–10:30</div><div><div class="steptitle">抵达吉隆坡机场</div><div class="stepdesc">入境、取行李、换少量马币，检查手机流量。</div></div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Kuala%20Lumpur%20International%20Airport" target="_blank" rel="noopener noreferrer">📍 地图</a></div><div class="step"><div class="time">10:30–12:30</div><div><div class="steptitle">机场 → 双威太子酒店</div><div class="stepdesc">机场巴士／轨道交通＋换乘；时间仅为预估，拥堵或入境较慢可顺延。</div></div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Sunway%20Putra%20Hotel%20Kuala%20Lumpur" target="_blank" rel="noopener noreferrer">📍 地图</a></div><div class="step"><div class="time">12:30–15:00</div><div><div class="steptitle">寄存行李、吃午餐</div><div class="stepdesc">逛酒店连通的 Sunway Putra Mall，先吃饭再休息。</div></div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Sunway%20Putra%20Mall%20Kuala%20Lumpur" target="_blank" rel="noopener noreferrer">📍 地图</a></div><div class="step"><div class="time">15:00–16:30</div><div><div class="steptitle">酒店入住、化妆收拾</div><div class="stepdesc">保留90分钟，不需要赶时间。</div></div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Sunway%20Putra%20Hotel%20Kuala%20Lumpur" target="_blank" rel="noopener noreferrer">📍 地图</a></div><div class="step"><div class="time">16:30–18:00</div><div><div class="steptitle">独立广场拍建筑</div><div class="stepdesc">乘轻轨前往老城区，打卡苏丹阿都沙末大厦。</div></div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Merdeka%20Square%20Kuala%20Lumpur" target="_blank" rel="noopener noreferrer">📍 地图</a></div><div class="step"><div class="time">18:00–19:10</div><div><div class="steptitle">中央艺术坊 → 鬼仔巷</div><div class="stepdesc">逛文创小店和复古街巷，边走边拍。</div></div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Kwai%20Chai%20Hong%20Kuala%20Lumpur" target="_blank" rel="noopener noreferrer">📍 地图</a></div><div class="step"><div class="time">19:10–21:00</div><div><div class="steptitle">茨厂街晚餐</div><div class="stepdesc">尝当地小吃、买水、回酒店早点休息。</div></div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Petaling%20Street%20Kuala%20Lumpur" target="_blank" rel="noopener noreferrer">📍 地图</a></div></div></article><article class="daypanel " data-panel="1"><div class="day-head"><div class="day-head-txt"><span class="kicker">DAY 02 / 12月24日</span><h3>去海峡吹风，逛古城的夜</h3><p>当天跨城往返｜古城＋海峡30–40分钟＋鸡场街晚餐</p></div><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Masjid%20selat%20melaka.jpg?width=1100" alt="去海峡吹风，逛古城的夜" loading="lazy"></div><div class="tip">⚠ 鸡场街固定夜市常规只在周五、六、日18:00–24:00开放；周四去的是鸡场街商铺与街区，不保证夜市摊位。</div><div class="timeline"><div class="step"><div class="time">07:45–08:45</div><div><div class="steptitle">酒店早餐、出发</div><div class="stepdesc">准备水、遮阳伞、充电宝，轻装。</div></div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Sunway%20Putra%20Hotel%20Kuala%20Lumpur" target="_blank" rel="noopener noreferrer">📍 地图</a></div><div class="step"><div class="time">08:45–10:00</div><div><div class="steptitle">前往 TBS 长途巴士总站</div><div class="stepdesc">轨道交通为主，留出找站台和检票时间。</div></div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Terminal%20Bersepadu%20Selatan%20Kuala%20Lumpur" target="_blank" rel="noopener noreferrer">📍 地图</a></div><div class="step"><div class="time">10:00–12:45</div><div><div class="steptitle">大巴前往 Melaka Sentral</div><div class="stepdesc">以实际购票班次为准；圣诞节前道路可能拥堵。</div></div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Melaka%20Sentral" target="_blank" rel="noopener noreferrer">📍 地图</a></div><div class="step"><div class="time">12:45–14:00</div><div><div class="steptitle">进入古城、午餐</div><div class="stepdesc">从车站Grab去古城，吃鸡饭粒或娘惹风味。</div></div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Dutch%20Square%20Melaka" target="_blank" rel="noopener noreferrer">📍 地图</a></div><div class="step"><div class="time">14:00–15:30</div><div><div class="steptitle">荷兰红屋＋圣保罗山</div><div class="stepdesc">红色建筑、古城门遗址、上山拍照。</div></div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=St.%20Paul's%20Hill%20Melaka" target="_blank" rel="noopener noreferrer">📍 地图</a></div><div class="step"><div class="time">15:30–16:00</div><div><div class="steptitle">Grab前往马六甲海峡</div><div class="stepdesc">导航「Masjid Selat Melaka」，只是海边看一眼，不走远。</div></div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Masjid%20Selat%20Melaka" target="_blank" rel="noopener noreferrer">📍 地图</a></div><div class="step"><div class="time">16:00–16:40</div><div><div class="steptitle">马六甲海峡看海拍照</div><div class="stepdesc">在允许进入的海边区域停留约40分钟，不建议下海。</div></div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Masjid%20Selat%20Melaka" target="_blank" rel="noopener noreferrer">📍 地图</a></div><div class="step"><div class="time">16:40–17:15</div><div><div class="steptitle">Grab返回古城</div><div class="stepdesc">回到河畔、鸡场街片区。</div></div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Melaka%20River%20Walk" target="_blank" rel="noopener noreferrer">📍 地图</a></div><div class="step"><div class="time">17:15–19:00</div><div><div class="steptitle">马六甲河畔＋鸡场街</div><div class="stepdesc">逛商铺、吃晚餐、拍平安夜街景；不承诺有夜市摊位。</div></div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Jonker%20Walk%20Melaka" target="_blank" rel="noopener noreferrer">📍 地图</a></div><div class="step"><div class="time">19:00–20:00</div><div><div class="steptitle">前往 Melaka Sentral</div><div class="stepdesc">按实际返程车票提前从古城出发。</div></div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Melaka%20Sentral" target="_blank" rel="noopener noreferrer">📍 地图</a></div><div class="step"><div class="time">20:00以后</div><div><div class="steptitle">乘预订大巴回吉隆坡</div><div class="stepdesc">尽量提前锁定19:30–21:00附近可售班次；最终以票面为准。</div></div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Terminal%20Bersepadu%20Selatan%20Kuala%20Lumpur" target="_blank" rel="noopener noreferrer">📍 地图</a></div></div></article><article class="daypanel " data-panel="2"><div class="day-head"><div class="day-head-txt"><span class="kicker">DAY 03 / 12月25日</span><h3>粉红与霓虹的圣诞</h3><p>粉红清真寺 + 双子塔 + 柏威年圣诞装饰 + 20:00夜游巴士</p></div><img src="https://commons.wikimedia.org/wiki/Special:FilePath/MasjidPutra.jpg?width=1100" alt="粉红与霓虹的圣诞" loading="lazy"></div><div class="tip">⚠ 粉红清真寺周五通常15:00以后才对非穆斯林游客开放。今天会较紧凑，建议灵活使用Grab，把晚餐改成简餐。</div><div class="timeline"><div class="step"><div class="time">08:30–10:30</div><div><div class="steptitle">双子塔晨间拍照</div><div class="stepdesc">从酒店去KLCC，公园和双塔广场拍日景。</div></div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Petronas%20Twin%20Towers%20Kuala%20Lumpur" target="_blank" rel="noopener noreferrer">📍 地图</a></div><div class="step"><div class="time">10:30–12:00</div><div><div class="steptitle">KLCC商场＋午餐</div><div class="stepdesc">可以逛街和短暂休息；水族馆当天不建议硬塞。</div></div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Suria%20KLCC" target="_blank" rel="noopener noreferrer">📍 地图</a></div><div class="step"><div class="time">12:00–14:45</div><div><div class="steptitle">出发去布城</div><div class="stepdesc">跨城区，公共交通MRT＋短程Grab；节日打车可能加价。</div></div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Putra%20Mosque%20Putrajaya" target="_blank" rel="noopener noreferrer">📍 地图</a></div><div class="step"><div class="time">15:00–16:10</div><div><div class="steptitle">粉红清真寺拍照</div><div class="stepdesc">以现场祈祷安排为准；衣着需遮肩、遮腿，室外建筑也适合拍。</div></div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Putra%20Mosque%20Putrajaya" target="_blank" rel="noopener noreferrer">📍 地图</a></div><div class="step"><div class="time">16:10–18:00</div><div><div class="steptitle">回吉隆坡武吉免登</div><div class="stepdesc">建议尽量按点返回，避免错过晚间观光巴士。</div></div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Pavilion%20Kuala%20Lumpur" target="_blank" rel="noopener noreferrer">📍 地图</a></div><div class="step"><div class="time">18:00–19:00</div><div><div class="steptitle">柏威年圣诞布置＋晚餐</div><div class="stepdesc">拍节日装饰、简单吃饭；如晚到可优先晚餐。</div></div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Pavilion%20Kuala%20Lumpur" target="_blank" rel="noopener noreferrer">📍 地图</a></div><div class="step"><div class="time">19:00–19:30</div><div><div class="steptitle">到金河广场核验车票</div><div class="stepdesc">常规集合点 Sungei Wang Plaza；若所购票种标KLCC，则按票面执行。</div></div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Sungei%20Wang%20Plaza%20Kuala%20Lumpur" target="_blank" rel="noopener noreferrer">📍 地图</a></div><div class="step"><div class="time">20:00–22:00</div><div><div class="steptitle">KL City of Lights敞篷双层巴士</div><div class="stepdesc">官方常规20:00出发、约2小时；露天座位和车次需要提前确认。</div></div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Sungei%20Wang%20Plaza%20Kuala%20Lumpur" target="_blank" rel="noopener noreferrer">📍 地图</a></div><div class="step"><div class="time">22:00以后</div><div><div class="steptitle">返回酒店</div><div class="stepdesc">节日人多，建议准备Grab备选。</div></div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Sunway%20Putra%20Hotel%20Kuala%20Lumpur" target="_blank" rel="noopener noreferrer">📍 地图</a></div></div></article><article class="daypanel " data-panel="3"><div class="day-head"><div class="day-head-txt"><span class="kicker">DAY 04 / 12月26日</span><h3>慢一点，带着照片回家</h3><p>只去酒店附近｜12月27日01:00起飞，26日晚必须到机场</p></div><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Pavilion%20Bukit%20Bintang%20with%20Christmas%20tree%20(211212).jpg?width=1100" alt="慢一点，带着照片回家" loading="lazy"></div><div class="tip">⚠ 返程航班为12月27日凌晨01:00，不是27日晚！按至少提前3小时到机场估算，目标26日21:30前抵达机场，19:00左右从酒店离开。</div><div class="timeline"><div class="step"><div class="time">09:00–10:30</div><div><div class="steptitle">早餐、睡醒、整理行李</div><div class="stepdesc">前一晚马六甲回来可能较晚，周六不安排早起赶景区。</div></div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Sunway%20Putra%20Hotel%20Kuala%20Lumpur" target="_blank" rel="noopener noreferrer">📍 地图</a></div><div class="step"><div class="time">10:30–12:00</div><div><div class="steptitle">退房、寄存行李</div><div class="stepdesc">向前台核对退房时间、押金及行李寄存。</div></div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Sunway%20Putra%20Hotel%20Kuala%20Lumpur" target="_blank" rel="noopener noreferrer">📍 地图</a></div><div class="step"><div class="time">12:00–13:00</div><div><div class="steptitle">蒂蒂旺沙湖滨公园</div><div class="stepdesc">湖边轻松散步、拍照，天气热或下雨可直接缩短。</div></div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Titiwangsa%20Lake%20Gardens%20Kuala%20Lumpur" target="_blank" rel="noopener noreferrer">📍 地图</a></div><div class="step"><div class="time">13:00–14:30</div><div><div class="steptitle">国家美术馆</div><div class="stepdesc">附近的免费室内参观项目，可根据体力取舍。</div></div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=National%20Art%20Gallery%20Kuala%20Lumpur" target="_blank" rel="noopener noreferrer">📍 地图</a></div><div class="step"><div class="time">14:30–16:30</div><div><div class="steptitle">午餐＋双威太子商场</div><div class="stepdesc">买伴手礼、补水休息，不去太远的商圈。</div></div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Sunway%20Putra%20Mall%20Kuala%20Lumpur" target="_blank" rel="noopener noreferrer">📍 地图</a></div><div class="step"><div class="time">16:30–18:30</div><div><div class="steptitle">回酒店周边休整、取行李</div><div class="stepdesc">提前确认航站楼、行李重量和打车方案。</div></div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Sunway%20Putra%20Hotel%20Kuala%20Lumpur" target="_blank" rel="noopener noreferrer">📍 地图</a></div><div class="step"><div class="time">约19:00</div><div><div class="steptitle">从酒店出发前往机场</div><div class="stepdesc">以实际起飞航站楼、交通工具和当日路况微调。</div></div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Kuala%20Lumpur%20International%20Airport" target="_blank" rel="noopener noreferrer">📍 地图</a></div><div class="step"><div class="time">21:00–22:00</div><div><div class="steptitle">抵达机场、办理出境手续</div><div class="stepdesc">目标至少提前3小时到达，不要卡点。</div></div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Kuala%20Lumpur%20International%20Airport" target="_blank" rel="noopener noreferrer">📍 地图</a></div><div class="step"><div class="time">12月27日01:00</div><div><div class="steptitle">航班起飞 → 北京</div><div class="stepdesc">核对航班时间、登机口和航站楼。</div></div><a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Kuala%20Lumpur%20International%20Airport" target="_blank" rel="noopener noreferrer">📍 地图</a></div></div></article>
@@ -80,5 +106,157 @@ document.querySelectorAll('.daypanel').forEach((p,day)=>{
 });
 const pic=(label)=>{const esc=String(label||"吉隆坡旅行").replace(/[&<>"']/g,"");const svg='<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1100" viewBox="0 0 900 1100"><defs><linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#abd4bc"/><stop offset="1" stop-color="#d8c7aa"/></linearGradient></defs><rect width="900" height="1100" fill="url(#s)"/><circle cx="650" cy="240" r="90" fill="#fff2cb" opacity=".85"/><path d="M0 660 Q200 510 450 620 T900 610 L900 1100 L0 1100Z" fill="#4d8374"/><path d="M0 820 Q350 720 620 840 T900 790 L900 1100 L0 1100Z" fill="#255a52"/><rect x="260" y="340" width="116" height="410" fill="#dae1c9"/><rect x="526" y="340" width="116" height="410" fill="#dae1c9"/><path d="M318 170 L260 340H376Z M584 170 L526 340H642Z" fill="#e5e6d7"/><path d="M300 230 L375 230 M566 230 L641 230" stroke="#35665c" stroke-width="10"/><path d="M0 930 H900" stroke="#f8e4bf" stroke-width="5" opacity=".6"/><rect x="50" y="925" width="800" height="108" rx="14" fill="#173f37" opacity=".86"/><text x="450" y="995" font-size="46" font-family="sans-serif" text-anchor="middle" fill="white">'+esc.slice(0,20)+'</text></svg>';return 'data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg)}
 document.querySelectorAll('img').forEach(img=>{const handler=()=>{img.onerror=null;img.src=pic(img.alt)};img.addEventListener('error',handler);if(img.complete&&img.naturalWidth===0)handler();});
+})();
+</script><script id="rain-trip-edit-js">
+(function(){
+"use strict";
+const KEY="rain_malaysia_dec2026_user_edits_v3";
+const panels=[...document.querySelectorAll(".daypanel")];
+const buRows=[...document.querySelectorAll("#budget .two .panel:first-child .info-row")];
+const budgetSum=document.querySelector("#budget .total b");
+const editToggle=document.getElementById("trip-edit-toggle");
+const status=document.getElementById("trip-editor-status");
+const importInput=document.getElementById("trip-import-input");
+let mode=false;
+let saveTimer=0;
+const safe=s=>String(s??"").slice(0,1800);
+function attr(id,txt,cls){const x=document.createElement("div");x.className=cls;x.dataset.tripEdit=id;x.textContent=safe(txt);return x}
+function makeSteps(state,panel){
+ const timeline=panel.querySelector(".timeline");
+ if(!timeline)return;
+ timeline.replaceChildren();
+ state.forEach((v)=>{
+  let step=document.createElement("div");step.className="step";
+  const time=attr("time",v.time,"time");step.appendChild(time);
+  const mid=document.createElement("div"),title=attr("title",v.title,"steptitle"),desc=attr("desc",v.desc,"stepdesc");mid.append(title,desc);step.appendChild(mid);
+  const map=document.createElement("a");map.className="mapbtn";map.textContent="📍 地图";map.target="_blank";map.rel="noopener noreferrer";map.dataset.place=safe(v.place||v.title);
+  map.href="https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(map.dataset.place);
+  step.appendChild(map);
+  const actions=document.createElement("div");actions.className="row-edit-actions";
+  [["↑ 上移","up"],["↓ 下移","down"],["📍 修改导航","map"],["✕ 删除","delete"]].forEach(([label,k])=>{const b=document.createElement("button");b.type="button";b.textContent=label;b.dataset.rowAction=k;actions.appendChild(b)});
+  step.appendChild(actions);timeline.appendChild(step);
+  const route=document.createElement("div");route.className="transit-bridge";
+  let dist=document.createElement("span");dist.className="b-dist";dist.dataset.tripEdit="dist";dist.textContent=safe(v.dist||"约待核实");
+  let way=document.createElement("span");way.className="b-way";way.dataset.tripEdit="way";way.textContent=safe(v.way||"交通方式待补充");
+  route.append(dist,way);timeline.appendChild(route);
+ });
+ updateEditable();
+}
+function fromDOM(){
+ return {schema:3,days:panels.map(p=>({
+ title:p.querySelector(".day-head-txt h3")?.textContent||"",
+ subtitle:p.querySelector(".day-head-txt p")?.textContent||"",
+ tip:p.querySelector(".tip")?.textContent||"",
+ steps:[...p.querySelectorAll(".timeline .step")].map(s=>{
+  const route=s.nextElementSibling?.classList.contains("transit-bridge")?s.nextElementSibling:null;
+  let url=s.querySelector(".mapbtn")?.href||"";
+  let query=s.querySelector(".mapbtn")?.dataset.place;
+  if(!query)try{query=new URL(url).searchParams.get("query")}catch(e){}
+  return {time:s.querySelector(".time")?.textContent||"",title:s.querySelector(".steptitle")?.textContent||"",desc:s.querySelector(".stepdesc")?.textContent||"",place:query||"",dist:route?.querySelector(".b-dist")?.textContent||"",way:route?.querySelector(".b-way")?.textContent||""};
+ })
+ })),budget:buRows.map(r=>({label:r.querySelector("span")?.textContent||"",amount:r.querySelector("strong")?.textContent||""}))};
+}
+const original=fromDOM();
+function render(st){
+ if(!st||!Array.isArray(st.days)||st.days.length!==panels.length||!Array.isArray(st.budget)||st.budget.length!==buRows.length)throw Error("文件格式不匹配");
+ panels.forEach((p,i)=>{
+  let d=st.days[i];if(!d||!Array.isArray(d.steps)||d.steps.length>60)throw Error("某天行程数量有误");
+  p.querySelector(".day-head-txt h3").textContent=safe(d.title);
+  p.querySelector(".day-head-txt p").textContent=safe(d.subtitle);
+  p.querySelector(".tip").textContent=safe(d.tip);
+  makeSteps(d.steps,p);
+ });
+ buRows.forEach((r,i)=>{
+  const v=st.budget[i]||{};
+  r.querySelector("span").textContent=safe(v.label);
+  r.querySelector("strong").textContent=safe(v.amount);
+ });
+ updateSum();updateEditable();
+}
+function updateSum(){
+ let n=buRows.reduce((n,r)=>n+(parseFloat((r.querySelector("strong")?.textContent||"0").replace(/[^\d.-]/g,""))||0),0);
+ if(budgetSum)budgetSum.textContent="¥"+n.toLocaleString("zh-CN",{maximumFractionDigits:2});
+}
+function updateEditable(){
+ document.querySelectorAll("[data-trip-edit]").forEach(x=>{
+   x.setAttribute("contenteditable",String(mode));x.setAttribute("spellcheck","false");
+ });
+}
+panels.forEach(p=>{
+ ["h3","p"].forEach(sel=>{const x=p.querySelector(".day-head-txt "+sel);if(x)x.dataset.tripEdit=sel});
+ const t=p.querySelector(".tip");if(t)t.dataset.tripEdit="tip";
+});
+buRows.forEach(r=>{r.querySelector("span").dataset.tripEdit="budget-label";r.querySelector("strong").dataset.tripEdit="budget-value"});
+function setStatus(t){status.textContent=t}
+function persist(){
+ try{localStorage.setItem(KEY,JSON.stringify(fromDOM()));setStatus("✓ 已保存到当前浏览器 · 换设备请导出备份")}catch(e){setStatus("⚠ 保存失败，请导出备份文件")}
+}
+function updateMode(on){
+ mode=on;document.body.classList.toggle("rain-editing",mode);
+ editToggle.textContent=mode?"✅ 完成编辑":"✏️ 开始编辑";
+ updateEditable();setStatus(mode?"点文字直接修改；每站下方可更改距离与交通方式":"可直接在手机上修改 · 内容保存在当前浏览器");
+}
+function downloadBlob(blob,filename){
+ const link=document.createElement("a"),u=URL.createObjectURL(blob);link.href=u;link.download=filename;document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(u),1200);
+}
+function exportState(){persist();downloadBlob(new Blob([JSON.stringify(fromDOM(),null,2)],{type:"application/json;charset=utf-8"}),"马来西亚行程_我的修改备份.json")}
+function exportHtml(){
+ persist();
+ const saved=JSON.stringify(fromDOM()).replace(/</g,"\\u003c");
+ const clone=document.documentElement.cloneNode(true);
+ clone.querySelectorAll("[contenteditable]").forEach(x=>x.removeAttribute("contenteditable"));
+ clone.querySelector("body")?.classList.remove("rain-editing");
+ let embed=clone.querySelector("#rain-trip-embedded");
+ if(!embed){embed=document.createElement("script");embed.type="application/json";embed.id="rain-trip-embedded";clone.querySelector("body").appendChild(embed)}
+ embed.textContent=saved;
+ downloadBlob(new Blob(["<!doctype html>\n"+clone.outerHTML],{type:"text/html;charset=utf-8"}),"马来西亚圣诞行程_可编辑离线网页.html");
+}
+function currentDay(){
+ let a=document.querySelector(".daytab.active");let i=Number(a?.dataset.day??0);return Number.isInteger(i)&&i>=0&&i<panels.length?i:0
+}
+editToggle.addEventListener("click",()=>updateMode(!mode));
+document.getElementById("trip-add-stop").addEventListener("click",()=>{
+ if(!mode)updateMode(true);
+ let st=fromDOM();st.days[currentDay()].steps.push({time:"待安排",title:"新增景点",desc:"点击这里写行程备注",place:"Kuala Lumpur Malaysia",dist:"约待核实",way:"交通方式待填写"});
+ render(st);persist();
+ const nodes=panels[currentDay()].querySelectorAll(".step");nodes[nodes.length-1]?.scrollIntoView({behavior:"smooth",block:"center"});
+});
+document.getElementById("trip-save").addEventListener("click",()=>{persist();updateMode(false)});
+document.getElementById("trip-export").addEventListener("click",exportState);
+document.getElementById("trip-download").addEventListener("click",exportHtml);
+document.getElementById("trip-import-btn").addEventListener("click",()=>importInput.click());
+document.getElementById("trip-reset").addEventListener("click",()=>{
+ if(!confirm("确定清除当前浏览器中所有行程修改，恢复到最初版本吗？建议先导出备份。"))return;
+ try{localStorage.removeItem(KEY)}catch(e){}
+ render(original);persist();updateMode(false);setStatus("已恢复初始行程");
+});
+importInput.addEventListener("change",async(e)=>{
+ const file=e.target.files?.[0];if(!file)return;
+ try{if(file.size>200000)throw Error("文件过大");const data=JSON.parse(await file.text());render(data);persist();updateMode(false);alert("备份已导入，行程和预算已恢复")}catch(err){alert("导入失败："+err.message)}finally{importInput.value=""}
+});
+let timer;
+document.addEventListener("input",e=>{
+ if(!mode||!e.target.matches("[data-trip-edit]"))return;
+ updateSum();clearTimeout(timer);timer=setTimeout(persist,550);
+});
+document.addEventListener("click",e=>{
+ const b=e.target.closest("[data-row-action]");if(!b||!mode)return;
+ const step=b.closest(".step"),panel=b.closest(".daypanel");if(!step||!panel)return;
+ let day=panels.indexOf(panel),i=[...panel.querySelectorAll(".step")].indexOf(step),st=fromDOM();
+ const list=st.days[day].steps,action=b.dataset.rowAction;
+ if(action==="delete"){if(!confirm("确定删除这条行程吗？"))return;list.splice(i,1)}
+ else if(action==="up"&&i>0){[list[i-1],list[i]]=[list[i],list[i-1]]}
+ else if(action==="down"&&i<list.length-1){[list[i+1],list[i]]=[list[i],list[i+1]]}
+ else if(action==="map"){const v=prompt("输入导航地点名称（Google Maps搜索关键词）",list[i].place||list[i].title);if(v===null)return;list[i].place=safe(v)}
+ else return;
+ render(st);persist();
+});
+const embed=document.querySelector("#rain-trip-embedded");
+let stored=null;
+try{stored=JSON.parse(localStorage.getItem(KEY)||"null")}catch(e){}
+if(!stored&&embed){try{stored=JSON.parse(embed.textContent)}catch(e){}}
+if(stored)try{render(stored);setStatus("✓ 已载入你的上次修改")}catch(e){setStatus("修改备份已过期，当前显示默认行程")}
+else render(original);
+updateMode(false);
 })();
 </script></body></html>
